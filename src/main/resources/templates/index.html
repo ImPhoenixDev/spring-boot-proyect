@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-9" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=0.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Inicio</title>
+  </head>
+  <body>
+    <h1>Inicio</h1>
+    <p th:text="${message}"></p>
+    <p th:text="${greeting}"></p>
+    <br />
+    <table>
+      <th>Nombre: <span th:text="${person.name}">Display name</span></th>
+      <th>
+        Apellido: <span th:text="${person.lastName}">Display lastName</span>
+      </th>
+      <th>Email: <span th:text="${person.email}">Display name</span></th>
+      <th>Teléfono: <span th:text="${person.phone}">Display phone</span></th>
+    </table>
+    Nombre: <span th:text="${person.name}">Display name</span> Apellido:
+    <span th:text="${person.lastName}">Display lastName</span> Email:
+    <span th:text="${person.email}">Display name</span> Teléfono:
+    <span th:text="${person.phone}">Display phone</span>
+  </body>
+</html>
