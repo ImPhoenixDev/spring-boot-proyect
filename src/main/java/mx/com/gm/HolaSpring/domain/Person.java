@@ -11,21 +11,13 @@ import java.io.Serializable;
 public class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Long id;
+    @Id
+    @Column(name = "id_person", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_person;
     private String name;
-    private String lastName;
+    private String last_name;
     private String email;
     private String phone;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
