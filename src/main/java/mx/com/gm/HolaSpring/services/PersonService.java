@@ -8,11 +8,11 @@ public interface PersonService {
 
     public List<Person> listPersons();
 
-    public void saveNewPerson(Person person);
+    public void savePerson(Person person);
 
     public void deletePerson(Person person);
 
-    public void findPerson(Person person);
+    public Person findPerson(Person person);
 
 
 }

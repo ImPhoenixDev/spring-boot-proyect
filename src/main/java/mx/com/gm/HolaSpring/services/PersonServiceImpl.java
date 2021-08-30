@@ -22,7 +22,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
-    public void saveNewPerson(Person person) {
+    public void savePerson(Person person) {
         this.personDao.save(person);
     }
 
@@ -33,7 +33,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public void findPerson(Person person) {
-        this.personDao.findById(person.getId_person());
+    public Person findPerson(Person person) {
+        return this.personDao.findById(person.getId_person()).orElse(null);
     }
 }

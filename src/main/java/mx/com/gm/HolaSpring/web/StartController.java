@@ -31,7 +31,20 @@ class StartController {
 
     @PostMapping("/save")
     public String save(Person person) {
-        this.personService.saveNewPerson(person);
+        this.personService.savePerson(person);
         return "redirect:/";
+    }
+
+    @GetMapping("/delete")
+    public String delete(Person person, Model model) {
+        this.personService.deletePerson(person);
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit/{id_person}")
+    public String edit(Person person, Model model) {
+        person = this.personService.findPerson(person);
+        model.addAttribute("person", person);
+        return "modify";
     }
 }
