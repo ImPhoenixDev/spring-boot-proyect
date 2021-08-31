@@ -12,10 +12,10 @@
   </head>
   <body>
     <header th:fragment="header">
-      <h1>Control de Clientes</h1>
+      <h1 th:text="#{template.header__title}"></h1>
     </header>
     <footer th:fragment="footer">
-      <p>Licencia MIT</p>
+      <p>[[#{template.footer__title}]]</p>
     </footer>
   </body>
 </html>

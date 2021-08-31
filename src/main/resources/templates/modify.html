@@ -4,8 +4,6 @@
   xmlns:th="http://www.thymeleaf.org"
   xmlns="http://www.w3.org/1999/xhtml"
 >
-<body>
-  
   <head>
     <meta charset="UTF-9" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
@@ -20,30 +18,33 @@
     <form method="post" th:action="@{/save}" th:object="${person}">
       <label for="name">Nombre</label>
       <input name="name" th:field="*{name}" type="text" />
-      <span th:if="${#fields.hasErrors('name')}"
-      th:errors="*{name}">Name Error</span>
+      <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+        >Name Error</span
+      >
       <br />
 
       <label for="last_name">Apellido</label>
       <input name="last_name" th:field="*{last_name}" type="text" />
-      <span th:if="${#fields.hasErrors('last_name')}"
-      th:errors="*{last_name}">Name Error</span>
+      <span th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}"
+        >Name Error</span
+      >
       <br />
 
       <label for="email">email</label>
       <input name="email" th:field="*{email}" type="email" />
-      <span th:if="${#fields.hasErrors('email')}"
-      th:errors="*{email}">Name Error</span>
+      <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+        >Name Error</span
+      >
       <br />
 
       <label for="phone">Teléfono</label>
       <input name="phone" th:field="*{phone}" type="tel" />
-      <span th:if="${#fields.hasErrors('phone')}"
-      th:errors="*{phone}">Name Error</span>
+      <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
+        >Name Error</span
+      >
       <br />
       <input type="submit" name="save" value="save" />
     </form>
     <footer th:replace="layout/template :: footer" />
-</body>
-    
+  </body>
 </html>
