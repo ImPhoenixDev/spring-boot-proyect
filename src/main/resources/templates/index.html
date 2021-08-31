@@ -10,7 +10,7 @@
     <title>Inicio</title>
   </head>
   <body>
-    <h1>Inicio</h1>
+    <header th:replace="layout/template :: header" />
     <a th:href="@{/add}">Agregar Persona</a>
     <br />
     <div th:if="${persons != null and !persons.empty}">
@@ -51,5 +51,6 @@
     <div th:if="${persons == null or persons.empty}">
       La lista de personas está vacia.
     </div>
+    <footer th:replace="layout/template :: footer" />
   </body>
 </html>
