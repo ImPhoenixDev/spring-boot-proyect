@@ -7,8 +7,11 @@ import mx.com.gm.HolaSpring.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @Slf4j
@@ -30,7 +33,8 @@ class StartController {
     }
 
     @PostMapping("/save")
-    public String save(Person person) {
+    public String save(@Valid Person person, Errors errors) {
+        if (errors.hasErrors()) return "modify";
         this.personService.savePerson(person);
         return "redirect:/";
     }
